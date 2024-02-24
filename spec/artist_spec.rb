@@ -1,4 +1,4 @@
-require_relative '../problems/artist' # Adjust this path
+require_relative '../problems/artist' 
 
 RSpec.describe Artist do
   describe "#initialize" do

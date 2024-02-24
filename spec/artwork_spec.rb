@@ -1,4 +1,4 @@
-require_relative '../problems/artwork' # Adjust this path
+require_relative '../problems/artwork'  
 
 RSpec.describe Artwork do
   let(:artist) { Artist.new("Van Gogh", 1853, 1890) }
