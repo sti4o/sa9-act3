@@ -33,5 +33,23 @@ RSpec.describe Artist do
         expect(subject.death_year).to eq(1890)
       end
     end
+  
+    describe "#print_info" do
+    it "prints artist info with birth and death years" do
+      artist = Artist.new("Vincent van Gogh", 1853, 1890)
+      expect { artist.print_info }.to output("Artist: Vincent van Gogh (1853 to 1890)\n").to_stdout
+    end
+
+    it "prints artist info with birth year only" do
+      artist = Artist.new("Frida Kahlo", 1907)
+      expect { artist.print_info }.to output("Artist: Frida Kahlo (1907 to present)\n").to_stdout
+    end
+
+    it "prints artist info as unknown when birth year is not provided" do
+      artist = Artist.new
+      expect { artist.print_info }.to output("Artist: unknown (unknown)\n").to_stdout
+    end
+end
   end
+
 end

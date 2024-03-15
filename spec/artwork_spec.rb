@@ -35,5 +35,12 @@ RSpec.describe Artwork do
         expect(subject.artist).to eq(artist)
       end
     end
+    describe "#print_info" do
+    it "calls print_info on the associated artist and prints artwork info" do
+      artwork = Artwork.new("Starry Night", 1889, artist)
+      expect(artist).to receive(:print_info)
+      expect { artwork.print_info }.to output("Title: Starry Night, 1889\n").to_stdout
+      end
+    end
   end
 end
